@@ -19,9 +19,8 @@ class Controller extends BaseController
 
     function callback()
     {
-        $user_Google = Socialite::driver('google')->user();
-        dd($user_Google);
+        $user = Socialite::driver('google')->user();
     }
 
-    
+
 }
