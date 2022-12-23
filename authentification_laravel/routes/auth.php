@@ -37,8 +37,7 @@ Route::middleware('guest')->group(function () {
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.store');
 
-    Route::get('/Login', [Controller::class, 'redirectToLogine'])->name('google_auth');
-    Route::get('/auth/google/callback', [Controller::class, 'callback'])->name('googleCallback');
+
 });
 
 Route::middleware('auth')->group(function () {
@@ -65,3 +64,6 @@ Route::middleware('auth')->group(function () {
 
 
 });
+
+Route::get('/Login', [Controller::class, 'redirectToLogine'])->name('google_auth');
+Route::get('/auth/google/callback', [Controller::class, 'callback'])->name('googleCallback');
