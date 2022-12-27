@@ -65,5 +65,3 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::get('/Login', [Controller::class, 'redirectToLogine'])->name('google_auth');
-Route::get('/auth/google/callback', [Controller::class, 'callback'])->name('googleCallback');

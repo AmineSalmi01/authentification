@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TodosController;
 use Illuminate\Support\Facades\Route;
@@ -42,3 +44,6 @@ Route::delete("/Todo/{id}", [TodosController::class, 'destroy']);
 
 
 require __DIR__.'/auth.php';
+
+Route::get('/Login', [AuthController::class, 'redirectToLogine'])->name('google_auth');
+Route::get('/auth/google/callback', [AuthController::class, 'callback'])->name('googleCallback');
